@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleAdmin.css') }}">
+	<script src="{{ url_for('static', filename='jsAdmin.js') }}" defer></script>
+</head>
+<body>
+	<div class="divForm">
+		<div class="form-container">
+			<form action="{{ url_for('pageAdmin') }}" method="post" id="form" novalidate="novalidate">
+			  <h2>Ajouter User</h2>
+			  <div class="form-group">
+				<label for="name">Nom:</label>
+				<input class="form-control" type="text" name="nom" minlength="2" required>
+			  </div>
+			 
+			  <div class="form-group">
+				<label for="telephone">Email:</label>
+				<input class="form-control" type="text" name="email" id="phone" required>
+			  </div>
+			  <div class="form-group">
+				<label for="email">Mot de Passe:</label>
+				<input class="form-control" type="text" name="mp" required>
+				<input class="submit form-control" type="submit" name="submit" value="Submit" id="validModif">
+
+			  </div>     
+			  
+			  </div>
+			</form>
+		  </div>
+	</div>
+    <div class="tete_admin">
+        <!-- <p>Hello</p> -->
+        <!-- <h2>Admin</h2> -->
+        <button class="boutTeteAdmin" id="boutModif">Ajouter User</button>
+        <a href=""><button class="boutTeteAdmin">Voir l'arbre généalogique des users</button></a>
+    </div>
+    <div class="liste_users">
+		
+        <table class="container">
+	        <thead>
+		        <tr>
+			        <th><h1>nom</h1></th>
+			        <th><h1>Email</h1></th>
+			        <th><h1>Mot de passe</h1></th>
+			        <!-- <th><h1>Modifier</h1></th>
+			        <th><h1>Archiver</h1></th> -->
+		        </tr>
+	        </thead>	
+	        <tbody>
+				{% for el in elem %}
+		        <tr id="lignElem">
+			        <td><input type="text" value="{{ el[0] }}" class="champ1"></td>
+					<td><input type="text" value="{{ el[1] }}" class="champ1"></td>
+					<td><input type="text" value="{{ el[2] }}" class="champ1"></td>
+			        <!-- <td>{{ el[1] }}</td>
+			        <td>{{ el[2] }}</td> -->
+
+			        <td><button id="btnModif">Modifier</button></td>
+			        <td><button id="btnSup">Archiver</button></td>
+			        <td><button id="btnVal">Valider</button></td>
+		        </tr>
+				{% endfor %}
+				
+	        </tbody>
+            </table>
+
+    </div>
+</body>
+</html>

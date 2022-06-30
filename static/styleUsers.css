@@ -1,0 +1,126 @@
+@import "compass/css3";
+
+
+.conteneur {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: space-between;
+    /* margin-left: -200px; */
+}
+.info_user{
+    width: 35%;
+    height: 60%;
+}
+
+/* $breakpoint-alpha: 480px;  */
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    text-decoration: underline;
+}
+.rwd-table {
+  margin: 1em 0;
+  /* min-width: 300px; */
+}
+  
+  tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  
+  
+  td {
+    display: block; }
+    
+    :first-child {
+      padding-top: .5em;
+    }
+    :last-child {
+      padding-bottom: .5em;
+    }
+
+    :before {
+      content: attr(data-th);
+      font-weight: bold;
+      width: 6.5em; 
+      display: inline-block;
+    
+      
+      @media (min-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  
+  
+  th, td {
+    text-align: left;
+    
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      :first-child {
+        padding-left: 0;
+      }
+      
+      :last-child {
+        padding-right: 0;
+      }
+    }
+
+  }
+  
+  .rwd-table {
+    background: #34495E;
+    height: 100px;
+    color: #fff;
+    border-radius: .4em;
+    overflow: hidden;}
+    tr {
+      border-color: lighten(#34495E, 10%);
+    }
+    th, td {
+      margin: .5em 1em;
+      @media (min-width: $breakpoint-alpha) { 
+        padding: 1em !important; 
+      }
+    }
+    th, td:before {
+      color: #dd5;
+    }
+  
+  
+
+
+
+
+
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+
+body {
+  padding: 0 2em;
+  width: 100%;
+  height: 1000px;
+  font-family: Montserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #444;
+  background: #eee;
+}
+
+/* h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: #34495E;
+} */
+
+
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Utilisateurs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleUsers.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleGenea.css') }}">
+    <script src="{{ url_for('static', filename='jsUser.js') }}" defer></script>
+</head>
+<header>
+    <a href="{{ url_for('deconnection') }}"><button style="background: red; border-radius: 8px;width:min-content;font-size:25px; font-weight:bold;">Déconnexion</button></a>
+    <h2>Bienvenue dans l'Interface Utilisateur</h2>
+</header>
+<body>
+  <div class="divForm">
+		<div class="form-container">
+			<form action="{{ url_for('pageUsers') }}" method="post" id="form" novalidate="novalidate">
+			  <h2 style="text-align: left; margin-left:-55px;">infos user</h2>
+			  <div class="form-group">
+				<label for="name">Prénom:</label>
+				<input class="form-control" type="text" name="prenom" minlength="2" required>
+			  </div>
+        <div class="form-group">
+          <label for="name">Téléphone:</label>
+          <input class="form-control" type="text" name="tel" minlength="2" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Adresse:</label>
+          <input class="form-control" type="text" name="adresse" minlength="2" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Profession:</label>
+          <input class="form-control" type="text" name="prof" minlength="2" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Âge:</label>
+          <input class="form-control" type="text" name="age" minlength="2" required>
+        </div>
+			 
+			  <div class="form-group">
+				<label for="telephone">sexe:</label>
+				<input class="form-control" type="text" name="sexe" id="phone" required>
+			  </div>
+		
+				<input class="submit form-control" type="submit" name="submit" value="Submit" id="validModif">
+
+			  </div>     
+			  
+			  </div>
+			</form>
+		  </div>
+	</div>
+    <div class="conteneur">
+    <div class="info_user">
+        <table class="rwd-table">
+            <tr>
+             <td><h3>Infromations Personnelles de l'utilisateur</h3></td>
+             </tr>
+            
+            <tr>
+              <td data-th="Prénom">{{ elements[0] }}</td>
+              <td data-th="Nom">{{ elements[1] }}</td>
+              <td data-th="Téléphone">{{ elements[2] }}</td>
+              <td data-th="Adresse">{{ elements[3] }}</td>
+            </tr>
+            <tr>
+              <td data-th="Email">{{ elements[4] }}</td>
+              <td data-th="Profession">{{ elements[5] }}</td>
+              <td data-th="Âge">{{ elements[6] }}</td>
+              <td data-th="Sexe">{{ elements[7] }}</td>
+              <td><button style="font-size: 20px; background: green;" id="adInfo">Compléter info</button></td>
+            </tr>
+        
+          </table>
+    </div>
+    <div class="arbre_gene_user">
+        <h2>Arbre généalogique du User:</h2>
+        <div class="pg-orgchart">
+          <div class="org-chart">
+            <ul>
+              <li>
+                <div class="user">
+  
+                  <div class="name">Arrière Grand-Père</div>
+                  <div class="role">{{ preARGP }}</div>
+                  <a class="manager" href="#"></a>
+                </div>
+                <ul>
+                  <li>
+                    <div class="user">
+                      
+                      <div class="name">Grand-Père</div>
+                      <div class="role">{{ preGP }}</div>
+                      <a class="manager" href="#"></a>
+                    </div>
+                    <ul>
+                      <li>
+                        <div class="user">
+                          
+                          <div class="name">Père</div>
+                          <div class="role">{{ preP }}</div>
+                          <a class="manager" href="#"></a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="user">
+                          
+                          <div class="name">Mère</div>
+                          <div class="role">{{ preM }}</div>
+                          <a class="manager" href="#"></a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="user">
+                      
+                      <div class="name">Utilisateur</div>
+                      <div class="role">{{ prenom }}</div>
+                      <a class="manager" href="#"></a>
+                    </div>
+                    <ul>
+                      <li>
+                        <div class="user">
+                          
+                          <div class="name">Femme</div>
+                          <div class="role">{{ preF }}</div>
+                          <a class="manager" href="#"></a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="user">
+                          
+                          <div class="name">Ami</div>
+                          <div class="role">{{ preAmi }}</div>
+                          <a class="manager" href="#"></a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
