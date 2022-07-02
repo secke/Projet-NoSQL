@@ -12,7 +12,7 @@ inputs.forEach(input=>{
         input.disabled=false;
     }))
     btnVal.forEach(btv=>btv.addEventListener('click',()=>{
-        fetch()
+        // fetch()
         input.disabled=true;
     }))
 
